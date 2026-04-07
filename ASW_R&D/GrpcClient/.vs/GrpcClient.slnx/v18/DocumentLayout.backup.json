@@ -1,0 +1,244 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GrpcClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\protos\\clientstream.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:protos\\clientstream.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\obj\\debug\\net10.0\\protos\\clientstreamgrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:obj\\debug\\net10.0\\protos\\clientstreamgrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\obj\\debug\\net10.0\\protos\\serverstreamgrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:obj\\debug\\net10.0\\protos\\serverstreamgrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\obj\\debug\\net10.0\\protos\\clientstream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:obj\\debug\\net10.0\\protos\\clientstream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\protos\\serverstream.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:protos\\serverstream.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\obj\\debug\\net10.0\\protos\\serverstream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:obj\\debug\\net10.0\\protos\\serverstream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\grpcclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:grpcclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|d:\\grpcclient\\protos\\greet.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{9D7A2BF2-2338-D990-C3BC-89676165E37A}|GrpcClient.csproj|solutionrelative:protos\\greet.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 21,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Clientstream.cs",
+              "DocumentMoniker": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\Clientstream.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net10.0\\Protos\\Clientstream.cs",
+              "ToolTip": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\Clientstream.cs",
+              "RelativeToolTip": "obj\\Debug\\net10.0\\Protos\\Clientstream.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCkCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T05:31:01.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Serverstream.cs",
+              "DocumentMoniker": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\Serverstream.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net10.0\\Protos\\Serverstream.cs",
+              "ToolTip": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\Serverstream.cs",
+              "RelativeToolTip": "obj\\Debug\\net10.0\\Protos\\Serverstream.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T05:15:26.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServerstreamGrpc.cs",
+              "DocumentMoniker": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\ServerstreamGrpc.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net10.0\\Protos\\ServerstreamGrpc.cs",
+              "ToolTip": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\ServerstreamGrpc.cs",
+              "RelativeToolTip": "obj\\Debug\\net10.0\\Protos\\ServerstreamGrpc.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T05:15:22.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientstreamGrpc.cs",
+              "DocumentMoniker": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\ClientstreamGrpc.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net10.0\\Protos\\ClientstreamGrpc.cs",
+              "ToolTip": "D:\\GrpcClient\\obj\\Debug\\net10.0\\Protos\\ClientstreamGrpc.cs",
+              "RelativeToolTip": "obj\\Debug\\net10.0\\Protos\\ClientstreamGrpc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T05:15:04.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GrpcClient.csproj",
+              "DocumentMoniker": "D:\\GrpcClient\\GrpcClient.csproj",
+              "RelativeDocumentMoniker": "GrpcClient.csproj",
+              "ToolTip": "D:\\GrpcClient\\GrpcClient.csproj",
+              "RelativeToolTip": "GrpcClient.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T13:15:57.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clientstream.proto",
+              "DocumentMoniker": "D:\\GrpcClient\\Protos\\clientstream.proto",
+              "RelativeDocumentMoniker": "Protos\\clientstream.proto",
+              "ToolTip": "D:\\GrpcClient\\Protos\\clientstream.proto",
+              "RelativeToolTip": "Protos\\clientstream.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-03-13T11:47:35.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "serverstream.proto",
+              "DocumentMoniker": "D:\\GrpcClient\\Protos\\serverstream.proto",
+              "RelativeDocumentMoniker": "Protos\\serverstream.proto",
+              "ToolTip": "D:\\GrpcClient\\Protos\\serverstream.proto",
+              "RelativeToolTip": "Protos\\serverstream.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-03-13T07:36:49.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "greet.proto",
+              "DocumentMoniker": "D:\\GrpcClient\\Protos\\greet.proto",
+              "RelativeDocumentMoniker": "Protos\\greet.proto",
+              "ToolTip": "D:\\GrpcClient\\Protos\\greet.proto",
+              "RelativeToolTip": "Protos\\greet.proto",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-02-23T12:49:12.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GrpcClient\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\GrpcClient\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAYwF4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T12:37:44.509Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 256,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 144,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

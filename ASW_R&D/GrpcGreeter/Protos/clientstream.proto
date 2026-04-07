@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcGreeter";
+
+package clientstream;
+
+service ClientStream{
+	rpc ProcessClientStream (stream InputStream) returns (OutputData);
+}
+
+message InputStream{
+	int32 msgId = 1;
+	string filter = 2;
+	int32 cuvNo = 3;
+	int32 reading = 4;
+}
+
+message OutputData {
+	string statusMsg = 1;
+}

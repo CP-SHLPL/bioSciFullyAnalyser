@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcGreeter";
+
+package greet;
+
+// The greeting service definition.
+
+service Result{
+	  rpc GetResultData (ResultDataInput) returns (ResultListOutput);
+}
+
+service Test{
+	rpc SaveTestData (TestDataInput) returns (TestDataOutput);
+}
+
+// The request message containing the user's name.
+
+
+message TestDataInput {
+	int32 testId = 1;
+	string testCode = 2;
+	string testName = 3;
+}
+
+message TestDataOutput{
+	int32 dataStatus = 1;    
+}
+
+message ResultDataInput{
+	string ddlTestCode = 2;	
+	string txtSampleID = 1;
+}
+
+message ResultDataOutput{
+	int32 resultIDPK = 1;
+	string testCode = 2;
+	string SampleBarcode = 3;
+	float result = 4;
+	google.protobuf.Timestamp resultDate = 5;
+	google.protobuf.Timestamp resultTime = 6;
+
+}
+
+message ResultListOutput {
+	repeated ResultDataOutput resultList = 1;
+}
+
+

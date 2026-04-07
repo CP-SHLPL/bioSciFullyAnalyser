@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "ServerStream";
+
+package serverstream;
+
+
+service StreamData{
+	rpc ProcessStreamData (StreamDataInput) returns (stream StreamDataOutput);
+}
+
+
+
+message StreamDataInput {
+	string inputMsg = 1;
+}
+
+message StreamDataOutput{
+	string streamDataVal = 1;
+}
+
+
+
