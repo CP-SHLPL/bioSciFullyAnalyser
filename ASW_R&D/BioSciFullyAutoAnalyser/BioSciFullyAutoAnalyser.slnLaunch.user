@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "DeviceController\\DeviceCommunicator.csproj",
+        "Action": "Start",
+        "DebugTarget": "DeviceController"
+      },
+      {
+        "Path": "GRPCServer\\GRPCServer.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

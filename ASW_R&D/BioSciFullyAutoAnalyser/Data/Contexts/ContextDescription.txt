@@ -1,0 +1,2 @@
+﻿This folder will contain the Context Description. It will contain all the tables that are used to describe the context of the data. 
+This will include tables that describe the source of the data, the purpose of the data, and any other relevant information about the data. 

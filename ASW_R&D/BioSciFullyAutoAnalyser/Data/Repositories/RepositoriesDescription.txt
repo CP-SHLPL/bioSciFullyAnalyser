@@ -1,0 +1,4 @@
+﻿This folder will contain all the repositories that will be used to access the data. 
+Each repository will have a description which will describe the purpose of the repository and the functions that it will expose. 
+The repositories will be used to access the data from the tables in the Contexts folder.
+Each Repository will be exposed only with interfaces that will be defined in the Interfaces folder.
