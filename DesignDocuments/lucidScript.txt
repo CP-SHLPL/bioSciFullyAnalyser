@@ -1,0 +1,441 @@
+CREATE TABLE `TblPatient` (
+  `IdPatient` int,
+  `PatientName` nvarchar,
+  `PatientFirstName` nvarchar,
+  `PatientLastName` nvarchar,
+  `DateOfBirth` DateTime,
+  `Gender` int,
+  `Remark` nvarchar
+);
+
+CREATE TABLE `TblReagentPosition` (
+  `IdReagentPosition` int,
+  `IdReagentBottle` int,
+  `TrayPosition` int,
+  `IsOuterPosition` bool,
+  `IsInUse` bool,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblScheduleDet` (
+  `IdScheduleDet` int,
+  `IdSchedule` long,
+  `IdTest` int,
+  `DilutionRatio` int,
+  `ScheduleStatus` int,
+  `ScheduleReason` int,
+  `IdQCDetails` Type,
+  `IdStandardDetails` Type,
+  `IdSample` Type,
+  `IsSelectiveCalibration` Type,
+  `IsConvergingCalibration` Type
+);
+
+CREATE TABLE `TblTest` (
+  `IdTest` int,
+  `TestCode` nvarchar,
+  `TestName` nvarchar,
+  `ConventionalUnitId` int,
+  `SIUnitId` int,
+  `isSpecialSolution` bool,
+  `MethodId` int,
+  `NoOfReagents` int,
+  `Decimals` int,
+  `BlankType` double,
+  `TestSequence` int,
+  `IsCalculatedTest` int,
+  `IdCalculatedDetails` int,
+  `IsSendToLIS` bool
+);
+
+CREATE TABLE `TblCalibrator` (
+  `IdCalibrator` int,
+  `CalibratiorLotNo` nvarchar,
+  `ExpiryDate` DateTime,
+  `IsExpired` bool,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblQCDetails` (
+  `IdQCDetails` int,
+  `IdQcLot` int,
+  `IdTest` int,
+  `MeanValue` double,
+  `SDValue` double,
+  `1SDRange` nvarchar,
+  `2SDRange` nvarchar,
+  `3SDRange` nvarchar,
+  `IdUnit` int,
+  `IsPBRTQC` bool,
+  `AvgSampleCount` int,
+  `LowTruncateValue` double,
+  `HighTruncateValue` double,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblSample` (
+  `IdSample` long,
+  `IsSampleBarcoded` bool,
+  `SampleBarcode` nvarchar,
+  `Field` Type,
+  `IdPatient` int,
+  `IsISERequested` bool,
+  `SampleFor` int,
+  `SampleContainer` int,
+  `SampleCollectionDate` DateTime,
+  `SampleProcessDate` DateTime,
+  `SampleType` int,
+  `SampleRemark` nvarchar,
+  `AreAllTestDone` bool,
+  `HaveCalculatedTestCompleted` bool,
+  `IsReRunRequested` bool,
+  `CreatedBy` int,
+  `CreatedAt` DateTime,
+  `ModifiedBy` int,
+  `Field` Type
+);
+
+CREATE TABLE `TblStandard` (
+  `IdStandard` int,
+  `IdCalibrator` int,
+  `IdTest` int,
+  `CurveType` int,
+  `ContainerType` int,
+  `AutoDilutionRatio` int,
+  `StandardCount` int,
+  `ValidityDays` DateTime,
+  `IsValid` bool,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblSchedule` (
+  `IdSchedule` long,
+  `SampleFor` int,
+  `SampleContainer` int,
+  `SamplePosition` int,
+  `IsSampleEmergency` bool,
+  `SampleStatus` int
+);
+
+CREATE TABLE `TblStandardDetails` (
+  `IdStandardDetails` int,
+  `IdStandard` int,
+  `StandardNumber` int,
+  `StandardPosition` int,
+  `StandardConc` double,
+  `StandardOD` double,
+  `IsRerun` bool,
+  `IsActive` Type
+);
+
+CREATE TABLE `TblCalibrationDetails` (
+  `IdCalibrationDetails` int,
+  `IDStandardDetails` int,
+  `IdCalibration` int,
+  `ResultId` long,
+  `CreatedAt` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblReagentBottle` (
+  `IdReagentBottle` int,
+  `ReagentLot` nvarchar,
+  `ReagentBottleNo` int,
+  `IdTest` int,
+  `BottleType` int,
+  `BottleSize` int,
+  `IdManufacturer` int,
+  `ManufactureDate` DateTime,
+  `BottleOpenDate` DateTime,
+  `BottleStabilityDate` DateTime,
+  `ExpiryDate` DateTime,
+  `Volume` int,
+  `VolumeSteps` int,
+  `IsBarcoded` bool,
+  `Barcode` nvarchar,
+  `TestCount` int,
+  `IsExhausted` bool,
+  `IsReminderRequired` bool,
+  `ReminderCount` int,
+  `IsActive` bool,
+  `CreatedBy` int,
+  `CreatedAt` DateTime,
+  `ModifiedBy` int,
+  `ModifiedAt` DateTime
+);
+
+CREATE TABLE `TblCalibration` (
+  `IdCalibration` int,
+  `IdTest` int,
+  `CalibrationDate` DateTime,
+  `ExpiryDate` DateTime,
+  `CurveType` int,
+  `StandardCount` int,
+  `KFactor` double,
+  `AFactor` double,
+  `BFactor` double,
+  `CFactor` double,
+  `DFactor` double,
+  `RoFactor` double,
+  `IsSelectiveCalibration` bool,
+  `IsCalculatedCalibration` bool,
+  `IsValid` bool,
+  `IsExpired` bool,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblTestDetails` (
+  `IdTestDetails` int,
+  `IdTest` int,
+  `PrimaryFilter` int,
+  `SecondaryFilter` int,
+  `IsDelayedR2` bool,
+  `IsOutpreparationSample` bool,
+  `Linearity` double,
+  `SubstrateDeplition` double,
+  `IncubationTime` int,
+  `ReadingTime` int,
+  `CorelationA` double,
+  `CorelationB` double,
+  `R1Volume` int,
+  `R2Volume` int,
+  `OutPreparationVolume` int,
+  `SampleVolumeNormal` double,
+  `SampleVolumeIncrease` double,
+  `SampleVolumeDecrease` double,
+  `AutoDilutionRatio` int,
+  `StirrerSpeedR1` int,
+  `StirrerSpeedR2` int,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type
+);
+
+CREATE TABLE `TblResultReads` (
+  `IdResultReads` long,
+  `IdResult` long,
+  `ReadingNumber` int,
+  `ReadingTime` DateTime,
+  `PrimaryOD` double,
+  `PrimaryCount` int,
+  `SecondaryOD` double,
+  `SecondaryCount` int,
+  `ActualOD` double,
+  `ReadingMark` int,
+  `IsConsideredInCalculation` bool
+);
+
+CREATE TABLE `TblResult` (
+  `IdResult` long,
+  `IdTest` int,
+  `IdCalibration` int,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `Field` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblReflex` (
+  `IdReflex` int,
+  `IdTest` int,
+  `ReflexType` int,
+  `LowRefRange` double,
+  `HighRefRange` double,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblReflexTests` (
+  `IdReflexTests` int,
+  `IdReflex` int,
+  `IdTest` int
+);
+
+CREATE TABLE `TblCalculatedDetails` (
+  `IdCalculatedDetails` int,
+  `RefLow` double,
+  `RefHigh` double,
+  `DisplayExpression` nvarchar,
+  `CalculatedExpression` nvarchar,
+  `IsActive` bool
+);
+
+CREATE TABLE `TblCarryOver` (
+  `IdCarryOver` int,
+  `IdTest` int,
+  `WashType` int,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblCarryOverTests` (
+  `IdCarryOverTests` int,
+  `IdCarryOver` int,
+  `IdAffectedTest` int
+);
+
+CREATE TABLE `TblTestProfile` (
+  `IdTestProfile` int,
+  `ProfileCode` nvarchar,
+  `ProfileName` nvarchar,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblTestProfileTests` (
+  `IdTestProfileTests` int,
+  `IdTestProfile` int,
+  `IdTestCode` int
+);
+
+CREATE TABLE `TblSoftwareSettings` (
+  `IdSoftwareSettings` int,
+  `IdInstrument` int,
+  `IdLanguage` int,
+  `IdleLampOffTime` int,
+  `IsReflexTestEnabled` bool,
+  `IsCarryOverEnabled` bool,
+  `IsPowerOnWashing` bool,
+  `IsPowerOffWashing` bool,
+  `PowerOffLiveReadings` bool,
+  `AutoReRun` bool,
+  `IsReRunOnLinearity` bool,
+  `IsReRunOnSubstrateDepletion` bool,
+  `ErrorAudioCue` bool,
+  `ErrorBeepFlags` bool,
+  `IsConventionalUnit` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+
+CREATE TABLE `TblInstrument` (
+  `IdInstrument` int,
+  `InstrumentName` nvarchar,
+  `PortName` nvarchar,
+  `TotalCuvetteNo` int,
+  `BaudRate` int
+);
+
+CREATE TABLE `TblInstrumentSettings` (
+  `TblInstrumentSettings` int,
+  `IdInstrument` int,
+  `IdMotor` int,
+  `PositionKey` int,
+  `StepValue` int,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `MOdifiedAt` Type
+);
+
+CREATE TABLE `TblLISSettings` (
+  `IdLISSettings` int,
+  `LISType` int,
+  `SerialPort` varchar,
+  `LISBaudRate` int,
+  `IPAddress` nvarchar,
+  `PortNumber` int,
+  `ShouldSendQCData` bool,
+  `ShouldSendCalibrationData` bool,
+  `ShouldSendAbnormalResults` bool,
+  `CreatedBy` int,
+  `CreatedAt` DateTime,
+  `ModifiedBy` int,
+  `ModifiedAt` DateTime
+);
+
+CREATE TABLE `TblUnit` (
+  `IdUnit` int,
+  `UnitName` nvarchar,
+  `IsConventionalUnit` bool,
+  `IsActive` bool
+);
+
+CREATE TABLE `TblUnitConversion` (
+  `IdUnitConversion` int,
+  `ConventionalUnitId` int,
+  `SIUnitID` int,
+  `MultiplicationFactor` double
+);
+
+CREATE TABLE `TblUser` (
+  `IdUser` int,
+  `Username` nvarchar,
+  `FirstName` nvarchar,
+  `LastName` nvarchar,
+  `Role` int,
+  `PasswordHash` nvarchar,
+  `PasswordUpdatedBy` int,
+  `PasswordUpdatedAt` DateTime,
+  `CreatedBy` int,
+  `CreatedAt` DateTime,
+  `ModifiedBy` int,
+  `ModifiedAt` DateTIme
+);
+
+CREATE TABLE `TblQCLot` (
+  `IdQCLot` int,
+  `QCLotNo` nvarchar,
+  `ExpiryDate` DateTIme,
+  `QCLevel` int,
+  `IsExpired` bool,
+  `IsActive` bool,
+  `CreatedBy` Type,
+  `CreatedAt` Type,
+  `ModifiedBy` Type,
+  `ModifiedAt` Type
+);
+

@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ui_biosci_faa_proj",
+            "cwd": "'ASW_R&D\\ui_biosci_faa_proj\\lib\\main.dart'",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ui_biosci_faa_proj (profile mode)",
+            "cwd": "'ASW_R&D\\ui_biosci_faa_proj\\lib\\main.dart'",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ui_biosci_faa_proj (release mode)",
+            "cwd": "'ASW_R&D\\ui_biosci_faa_proj\\lib\\main.dart'",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
