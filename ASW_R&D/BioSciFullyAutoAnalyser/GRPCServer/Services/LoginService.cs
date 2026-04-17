@@ -64,7 +64,7 @@ namespace GRPCServer.Services
                 var dictItem = new DictionaryItem();
                 dictItem.Id = 1;
                 dictItem.Value = item;
-                dictItem.CreatedAt = Timestamp.FromDateTime(DateTimeOffset.Now.UtcDateTime);
+                dictItem.CreatedAt = DateTime.Now.ToString();
                 DictionaryListResponse.Items.Add(dictItem);
             }
             //return DictionaryListResponse;
@@ -83,7 +83,7 @@ namespace GRPCServer.Services
                 {
                     Id = request.DictionaryValueId,
                     Value = request.ValueDescription,
-                    CreatedAt = Timestamp.FromDateTime(DateTimeOffset.Now.UtcDateTime)
+                    CreatedAt = DateTime.Now.ToString()
                 });
             }
             else
@@ -92,7 +92,7 @@ namespace GRPCServer.Services
                 {
                     Id = -1,
                     Value = "",
-                    CreatedAt = Timestamp.FromDateTime(DateTimeOffset.Now.UtcDateTime)
+                    CreatedAt = DateTime.Now.ToString()
                 });
             }
         }

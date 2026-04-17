@@ -40,13 +40,15 @@ class MyToast {
     BuildContext context, {
     required String title,
     String? description,
+    int durationSeconds = 2,
   }) {
     return show(
       context: context,
       title: title,
       description: description,
       type: ToastificationType.success,
-      icon: const Icon(Icons.check_circle_outline),
+      icon: const Icon(Icons.check_circle_sharp, color: Colors.green),
+      customDuration: Duration(seconds: durationSeconds),
     );
   }
 

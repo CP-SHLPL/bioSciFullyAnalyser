@@ -13,8 +13,6 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
-import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
-    as $1;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -256,7 +254,7 @@ class DictionaryItem extends $pb.GeneratedMessage {
   factory DictionaryItem({
     $core.int? id,
     $core.String? value,
-    $1.Timestamp? createdAt,
+    $core.String? createdAt,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -280,8 +278,7 @@ class DictionaryItem extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aI(1, _omitFieldNames ? '' : 'Id', protoName: 'Id')
     ..aOS(2, _omitFieldNames ? '' : 'Value', protoName: 'Value')
-    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'CreatedAt',
-        protoName: 'CreatedAt', subBuilder: $1.Timestamp.create)
+    ..aOS(3, _omitFieldNames ? '' : 'CreatedAt', protoName: 'CreatedAt')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -322,15 +319,13 @@ class DictionaryItem extends $pb.GeneratedMessage {
   void clearValue() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $1.Timestamp get createdAt => $_getN(2);
+  $core.String get createdAt => $_getSZ(2);
   @$pb.TagNumber(3)
-  set createdAt($1.Timestamp value) => $_setField(3, value);
+  set createdAt($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => $_clearField(3);
-  @$pb.TagNumber(3)
-  $1.Timestamp ensureCreatedAt() => $_ensure(2);
 }
 
 class DictionaryListResponse extends $pb.GeneratedMessage {

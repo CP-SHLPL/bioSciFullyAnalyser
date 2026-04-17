@@ -17,9 +17,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
+        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        // Generates a dark color palette based on the SAME blue seed
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.lightGreen, 
+          brightness: Brightness.dark, 
+        ),
+        // You only need to define button themes here if you want 
+        // them to look fundamentally different in dark mode. 
+        // Otherwise, they automatically adapt to the dark colors!
+      ),
+      themeMode: ThemeMode.light,
+      home: const MyHomePage(title: 'BioSci 400 Fully Analyser'),
     );
   }
 }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:grpc/grpc.dart';
+import 'package:ui_biosci_faa_proj/core/widgets/my_text_field.dart';
 import 'package:ui_biosci_faa_proj/generated/login/login.pb.dart';
 import '../data/login_service_provider.dart';// For request/response objects
 import '../../home/views/home_page.dart';
 import '../../user/providers/user_provider.dart';
+import 'package:ui_biosci_faa_proj/core/widgets/my_toast.dart';
+
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -22,7 +26,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     final username = _usernameController.text.trim();
     final password = _passwordController.text.trim(); 
 
-    if (username.isEmpty || password.isEmpty) return;
+    if (username.isEmpty || password.isEmpty) {
+      if (mounted) {
+        MyToast.error(context, title: 'Username and password cannot be empty');
+      }
+      return;
+    };
 
     try {
       final request = LoginRequest()..username = username;
@@ -31,17 +40,16 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       
       if (response.userID < 0) {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Login unsuccessful'),
-              duration: const Duration(seconds: 1),
-              backgroundColor: Theme.of(context).colorScheme.error,
-              ),
-          );
+          MyToast.error(context, title: 'Login failed', description: 'Invalid username or password');
         }
         _passwordController.clear();
         _passwordFocusNode.requestFocus();
         return;
+      }
+      else{
+        if (mounted) {
+          MyToast.success(context, title: 'Login successful');
+        }
       }
 
       ref.read(userProvider.notifier).setUser(response);
@@ -53,12 +61,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         );
       }
     } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e')),
-        );
+      if (e is GrpcError && e.code == 14) {
+        MyToast.error(context, title: 'Error', description: 'Error: Please Retry');
       }
-      print('gRPC Error: $e');  
     }
   }
 
@@ -88,13 +93,18 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               const Spacer(flex: 2),
               Expanded(
                 flex: 2,
-                child: TextField(
+                child: MyTextField(
                   controller: _usernameController,
-                  autofocus: true,
-                  decoration: const InputDecoration(
-                    hintText: 'Username',
-                    prefixIcon: Icon(Icons.person),
-                  ),
+                  labelText: 'Username',
+                  prefixIcon: const Icon(Icons.person),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Username cannot be empty';
+                    }
+                    return null;
+                  },
+                  helperText: "Enter your username",
+                  maxLength: 40,
                 ),
               ),
               const Spacer(flex: 2),
@@ -107,14 +117,20 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               const Spacer(flex: 2),
               Expanded(
                 flex: 2,
-                child: TextField(
+                child: MyTextField(
                   controller: _passwordController,
                   focusNode: _passwordFocusNode,
+                  labelText: 'Password',
+                  prefixIcon: Icon( Icons.lock_rounded, size: Theme.of(context).textTheme.bodyLarge?.fontSize),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Password cannot be empty';
+                    }
+                    return null;
+                  },
+                  helperText: "Enter your password",
+                  maxLength: 40,
                   obscureText: true,
-                  decoration: const InputDecoration(
-                    hintText: 'Password',
-                    prefixIcon: Icon(Icons.lock),
-                  ),
                   onSubmitted: (value) => _login(),
                 ),
               ),
@@ -123,15 +139,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           ),
           const SizedBox(height: 40),
           Center(
-            // child: ElevatedButton.icon(
-            //   onPressed: _login,
-            //   style: const ButtonStyle(
-            //     enableFeedback: true,
-
-            //   ),
-            //   icon: Icon(Icons.login, size: Theme.of(context).textTheme.bodyLarge?.fontSize ?? 24),
-            //   label: Text('Login', style: Theme.of(context).textTheme.bodyLarge),
-            // ),
             child: ActionChip(
               onPressed: _login,
               avatar: Icon(Icons.save_alt_rounded, size: Theme.of(context).textTheme.bodyLarge?.fontSize ?? 24),

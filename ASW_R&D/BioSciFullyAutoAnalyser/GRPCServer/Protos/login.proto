@@ -33,7 +33,7 @@ message DictionaryRequest{
 message DictionaryItem{
 	int32 Id = 1;
 	string Value = 2;
-	google.protobuf.Timestamp CreatedAt = 3;
+	string CreatedAt = 3;
 }
 
 message DictionaryListResponse{

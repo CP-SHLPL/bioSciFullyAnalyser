@@ -68,22 +68,14 @@ const DictionaryItem$json = {
   '2': [
     {'1': 'Id', '3': 1, '4': 1, '5': 5, '10': 'Id'},
     {'1': 'Value', '3': 2, '4': 1, '5': 9, '10': 'Value'},
-    {
-      '1': 'CreatedAt',
-      '3': 3,
-      '4': 1,
-      '5': 11,
-      '6': '.google.protobuf.Timestamp',
-      '10': 'CreatedAt'
-    },
+    {'1': 'CreatedAt', '3': 3, '4': 1, '5': 9, '10': 'CreatedAt'},
   ],
 };
 
 /// Descriptor for `DictionaryItem`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List dictionaryItemDescriptor = $convert.base64Decode(
-    'Cg5EaWN0aW9uYXJ5SXRlbRIOCgJJZBgBIAEoBVICSWQSFAoFVmFsdWUYAiABKAlSBVZhbHVlEj'
-    'gKCUNyZWF0ZWRBdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCUNyZWF0ZWRB'
-    'dA==');
+    'Cg5EaWN0aW9uYXJ5SXRlbRIOCgJJZBgBIAEoBVICSWQSFAoFVmFsdWUYAiABKAlSBVZhbHVlEh'
+    'wKCUNyZWF0ZWRBdBgDIAEoCVIJQ3JlYXRlZEF0');
 
 @$core.Deprecated('Use dictionaryListResponseDescriptor instead')
 const DictionaryListResponse$json = {

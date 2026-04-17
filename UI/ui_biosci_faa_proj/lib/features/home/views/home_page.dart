@@ -40,9 +40,9 @@ class _HomePageState extends ConsumerState<HomePage> {
             cells: {
               'id': PlutoCell(value: item.id),
               'value': PlutoCell(value: item.value),
-              'age': PlutoCell(value: DateTime.now().toString()), // Providing a valid string for date type
+              'age': PlutoCell(value: item.createdAt), // Providing a valid string for date type
               'actions': PlutoCell(value: item.id), // Dummy value for the actions column
-              'info': PlutoCell(value: item.id), // Dummy value for the info column
+              'delete': PlutoCell(value: item.id), // Dummy value for the info column
             },
           ),
         );
@@ -75,7 +75,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       PlutoColumn(
         title: 'Age',
         field: 'age',
-        type: PlutoColumnType.date(),
+        type: PlutoColumnType.text(),
         enableSorting: true, // Enable sorting
       ),
     ];
@@ -130,7 +130,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   }
                 );
               },
-              onInfoPressed: (dialogContext, row){
+              onDeletePressed: (dialogContext, row, stateManager){
                 return CustomEditWidget(
                   initialName: row.cells['value']?.value?.toString() ?? '',
                   dictionaryValueId: row.cells['id']!.value as int,
