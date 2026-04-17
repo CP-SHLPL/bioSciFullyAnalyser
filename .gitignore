@@ -1,0 +1,27 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ASW_R&D/BioSciFullyAutoAnalyser/.vs
+/ASW_R&D/BioSciFullyAutoAnalyser/Data/bin/Debug/net10.0
+/ASW_R&D/BioSciFullyAutoAnalyser/Data/obj
+/ASW_R&D/BioSciFullyAutoAnalyser/DeviceController/bin
+/ASW_R&D/BioSciFullyAutoAnalyser/DeviceController/obj
+/ASW_R&D/BioSciFullyAutoAnalyser/GRPCServer/bin
+/ASW_R&D/BioSciFullyAutoAnalyser/GRPCServer/obj
+/ASW_R&D/GrpcClient/.vs
+/ASW_R&D/GrpcGreeter/.vs/GrpcServer/CopilotIndices/18.4.114.215
+/ASW_R&D/GrpcGreeter/.vs/GrpcServer.slnx
+/ASW_R&D/GrpcGreeter/.vs/ProjectEvaluation
+/ASW_R&D/BioSciFullyAutoAnalyser/packages/EntityFramework.6.5.1
+/UI/ui_biosci_faa_proj/.vs
+/UI/ui_biosci_faa_proj/build
+/UI/ui_biosci_faa_proj/.dart_tool
+/UI/ui_biosci_faa_proj/.idea
+/UI/ui_biosci_faa_proj/.vscode
+/UI/ui_biosci_faa_proj/.packages
+/UI/ui_biosci_faa_proj/.flutter-plugins
+/UI/ui_biosci_faa_proj/.flutter-plugins-dependencies
+/UI/ui_biosci_faa_proj/.metadata
+/UI/ui_biosci_faa_proj/.pub-cache
+/UI/ui_biosci_faa_proj/.pub

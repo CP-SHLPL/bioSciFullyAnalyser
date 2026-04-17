@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+package instrument;
+
+// The server exposes this service
+service InstrumentData {
+  // Method the worker will call to send data to the server
+  rpc SendReading (ReadingRequest) returns (ReadingResponse) {}
+}
+
+message ReadingRequest {
+  string sensor_id = 1;
+  float measurement_value = 2;
+  string timestamp = 3;
+}
+
+message ReadingResponse {
+  bool success = 1;
+  string message = 2;
+}

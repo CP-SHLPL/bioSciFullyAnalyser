@@ -1,0 +1,2 @@
+protoc --dart_out=grpc:lib/generated/login -I '..\..\..\bioSciFullyAnalyser\ASW_R&D\BioSciFullyAutoAnalyser\GRPCServer\Protos\' '..\..\..\bioSciFullyAnalyser\ASW_R&D\BioSciFullyAutoAnalyser\GRPCServer\Protos\login.proto'
+protoc --dart_out=grpc:lib/generated/greet -I '..\..\..\bioSciFullyAnalyser\ASW_R&D\BioSciFullyAutoAnalyser\GRPCServer\Protos\' '..\..\..\bioSciFullyAnalyser\ASW_R&D\BioSciFullyAutoAnalyser\GRPCServer\Protos\greet.proto'

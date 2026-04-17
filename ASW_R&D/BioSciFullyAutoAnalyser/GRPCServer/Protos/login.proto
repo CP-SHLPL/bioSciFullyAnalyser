@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPCServer.Protos";
+import "google/protobuf/timestamp.proto";
+
+
+package login;
+
+service Login{
+	rpc LoginAttempt (LoginRequest) returns (LoginResponse);
+	rpc GetDictionaryValues(DictionaryRequest) returns (DictionaryListResponse);
+	rpc UpdateDictionaryValue(DictionaryItemRequest) returns (DictionaryItem);
+}
+
+message LoginRequest{
+	string username = 1;
+	string password = 2;
+}
+
+message LoginResponse{
+	bool LoginSuccess = 1;
+	int32 UserID = 2; 
+	string FirstName = 3;
+	string SecondName = 4;
+	int32 Role = 5;
+	string RoleString = 6; 
+}
+
+message DictionaryRequest{
+	int32 DictionaryId = 1;
+}
+
+message DictionaryItem{
+	int32 Id = 1;
+	string Value = 2;
+	string CreatedAt = 3;
+}
+
+message DictionaryListResponse{
+	repeated DictionaryItem items = 1;
+}
+
+message DictionaryItemRequest{
+	int32 DictionaryKeyId = 1;
+	int32 DictionaryValueId = 2;
+	string ValueDescription = 3;
+}

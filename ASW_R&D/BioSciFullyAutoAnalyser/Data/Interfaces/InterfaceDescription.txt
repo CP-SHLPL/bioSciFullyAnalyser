@@ -1,0 +1,1 @@
+﻿This folder will contain all the Interface Descriptions. Each table will have an interface which will expose the functions of the table. 

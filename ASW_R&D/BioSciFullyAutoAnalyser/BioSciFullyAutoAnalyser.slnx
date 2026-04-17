@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="Data/Data.csproj" />
+    <Project Path="DeviceController/DeviceCommunicator.csproj" Id="d7842088-1b76-4da3-94cf-4e726e5d21e2" />
+    <Project Path="GRPCServer/GRPCServer.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+    </Project>
+  </Folder>
+</Solution>

@@ -1,0 +1,7 @@
+﻿This folder will contain all the entities that are used to describe the data. 
+This will include tables that describe the structure of the data, the relationships between the data, and any other relevant information about the data. 
+Each entity will be in a separate file named after the table it is describing. 
+For example, if we have a table called "TblProducts", we will have a file called "TblProducts.cs" in this folder that contains the entity description for the "TblProducts" table.
+This file can also contain entities not in the database but that are needed for the views like view models, printing data, etc.
+These entities should be properly named as such to avoid confusion with the database entities. 
+For example, if we have a view model for the "TblProducts" table, we can name it "TblProductsViewModel.cs" to indicate that it is a view model and not a database entity.
