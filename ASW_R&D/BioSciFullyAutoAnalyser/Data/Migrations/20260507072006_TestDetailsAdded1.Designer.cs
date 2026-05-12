@@ -3,6 +3,7 @@ using System;
 using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20260507072006_TestDetailsAdded1")]
+    partial class TestDetailsAdded1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,9 +121,6 @@ namespace Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("DecimalPlaces")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DirectionID")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ui_biosci_faa_proj/features/login/views/login_page.dart';
+import 'package:ui_biosci_faa_proj/features/home/views/home_page.dart';
 
 void main() {
   runApp(
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen, brightness: Brightness.light), // Generates a color scheme based on the first primary color
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Expanded(child: LoginPage()),
+            Expanded(child: HomePage()),
           ],
         ),
       ),

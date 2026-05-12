@@ -63,7 +63,7 @@ namespace GRPCServer.Services
             {
                 var dictItem = new DictionaryItem();
                 dictItem.Id = 1;
-                dictItem.Value = item;
+                dictItem.Value = item.ValueDescription;
                 dictItem.CreatedAt = DateTime.Now.ToString();
                 DictionaryListResponse.Items.Add(dictItem);
             }
@@ -96,6 +96,5 @@ namespace GRPCServer.Services
                 });
             }
         }
-
     }
 }

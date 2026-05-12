@@ -3,6 +3,7 @@ using System;
 using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20260507064723_TestDetailsAdded")]
+    partial class TestDetailsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,9 +123,6 @@ namespace Data.Migrations
                     b.Property<int>("DecimalPlaces")
                         .HasColumnType("int");
 
-                    b.Property<int>("DirectionID")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
@@ -163,92 +163,6 @@ namespace Data.Migrations
                     b.HasKey("IdTest");
 
                     b.ToTable("TblTest", (string)null);
-                });
-
-            modelBuilder.Entity("Data.Entities.TblTestDetails", b =>
-                {
-                    b.Property<int>("IdTestDetails")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("AutoDilutionRatio")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CorelationA")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CorelationB")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdTest")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IncubationTime")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDelayedR2")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<double>("LastReagentBlank")
-                        .HasColumnType("double");
-
-                    b.Property<double>("Linearity")
-                        .HasColumnType("double");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PrimaryFilterID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("R1Volume")
-                        .HasColumnType("int");
-
-                    b.Property<int>("R2Volume")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReadEndCycle")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReadStartCycle")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReadingTime")
-                        .HasColumnType("int");
-
-                    b.Property<double>("ReagentBlankHigh")
-                        .HasColumnType("double");
-
-                    b.Property<double>("ReagentBlankLow")
-                        .HasColumnType("double");
-
-                    b.Property<double>("SampleVolume")
-                        .HasColumnType("double");
-
-                    b.Property<int>("SecondaryFilterID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StirrerSpeedR2")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StirrerSpeedSample")
-                        .HasColumnType("int");
-
-                    b.Property<double>("SubstrateDepletion")
-                        .HasColumnType("double");
-
-                    b.HasKey("IdTestDetails");
-
-                    b.ToTable("TblTestDetails", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.TblUser", b =>

@@ -141,7 +141,7 @@ class _ReusableDataTableState extends State<ReusableDataTable> {
                     // Trigger the popup builder passed from the parent
                     showDialog(
                       context: context,
-                      builder: (dialogContext) => widget.onEditPressed!(
+                      builder: (dialogContext) => widget.onDeletePressed!(
                         dialogContext,
                         rendererContext.row,
                         stateManager,
@@ -166,6 +166,11 @@ class _ReusableDataTableState extends State<ReusableDataTable> {
     final ColorScheme colors = theme.colorScheme;
 
     return PlutoGrid(
+      // By providing a key that changes when the number of rows changes, we are
+      // forcing Flutter to recreate the PlutoGrid widget and its state. This is
+      // necessary because PlutoGrid does not automatically update its view when
+      // the `rows` list is replaced declaratively.
+      key: ValueKey(widget.rows.length),
       columns: _finalColumns,
       rows: widget.rows,
       
@@ -176,7 +181,7 @@ class _ReusableDataTableState extends State<ReusableDataTable> {
           enableColumnBorderHorizontal: true,
           enableCellBorderVertical: true,
           enableCellBorderHorizontal: true,
-
+    
           // --- Dynamic Theme Colors ---
             gridBackgroundColor: colors.surface,
             rowColor: colors.surface,
@@ -203,7 +208,7 @@ class _ReusableDataTableState extends State<ReusableDataTable> {
             // Icons & Checks
             iconColor: colors.onSurfaceVariant,
             checkedColor: colors.primary,
-
+    
             //Search Field
             // columnFilterHeight: 
         ),

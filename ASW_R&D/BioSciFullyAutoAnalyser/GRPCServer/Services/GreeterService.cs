@@ -4,7 +4,7 @@ using Grpc.Core;
 namespace GRPCServer.Services
 {
     public class GreeterService(ILogger<GreeterService> logger,
-                                    ITblUserRepository _tblUserRepository) : Greeter.GreeterBase
+                                ITblUserRepository _tblUserRepository) : Greeter.GreeterBase
     {
         //private readonly ITblUserRepository _tblUserRepository;
         //private readonly ITblDictionaryValues _TblDictionaryValueRepository;

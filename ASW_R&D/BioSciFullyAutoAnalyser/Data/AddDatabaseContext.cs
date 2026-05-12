@@ -20,6 +20,7 @@ namespace Data
 
             services.AddScoped<ITblUserRepository, TblUserRepository>();
             services.AddScoped<ITblDictionaryValues, TblDictionaryValuesRepository>();
+            services.AddScoped<ITblTest, TblTestRepository>();
             return services;
         }
     }

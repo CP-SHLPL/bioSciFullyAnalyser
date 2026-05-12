@@ -13,7 +13,8 @@ namespace Data.Contexts
         public DbSet<TblUser> TblUsers { get; set; }
         public DbSet<TblDictionaryKeys> TblDictionaryKeys { get; set; }
         public DbSet<TblDictionaryValues> TblDictionaryValues { get; set; }
-
+        public DbSet<TblTest> TblTest { get; set; }
+        public DbSet<TblTestDetails> TblTestDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

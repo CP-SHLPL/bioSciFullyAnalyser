@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9f7f802e-2ff5-4d09-a0ec-a2f01c6f80d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/core/shared_models/drop_downs.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/widgets/MyReactiveDropDown.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/widgets/MyReactiveTextField.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/widgets/my_tooltip.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/parameter/form/parameter_form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/AddDatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/AddDatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Contexts/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Contexts/DatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblDictionaryValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblDictionaryValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Enums/CommonEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Enums/CommonEnums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblDictionaryValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblDictionaryValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblDictionaryValuesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblDictionaryValuesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/DeviceController/DeviceCommunicator.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/DeviceController/DeviceCommunicator.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/GRPCServer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/GRPCServer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/login.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/login.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/GreeterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/GreeterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/LoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/widgets/custom_table.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/custom_table.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/data/home_page_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/data/home_page_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/views/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/views/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_biosci_faa_proj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ui_biosci_faa_proj.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
@@ -13,24 +58,78 @@
       </file>
     </leaf>
   </component>
-  <component name="ToolWindowManager">
-    <editor active="true" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-    </layout>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3DI3iBh2uqZIuPrM8rP9HV3amWf" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-    </navigator>
+    <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
       <pane id="ProjectPane">
         <option name="show-excluded-files" value="false" />
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "gRPC__Demo1",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/bioSciFullyAnalyser/UI/ui_biosci_faa_proj",
+    "settings.editor.selected.configurable": "com.android.studio.ml.bot.mainConfigurable",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f7f802e-2ff5-4d09-a0ec-a2f01c6f80d4" name="Changes" comment="" />
+      <created>1777955882087</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777955882087</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

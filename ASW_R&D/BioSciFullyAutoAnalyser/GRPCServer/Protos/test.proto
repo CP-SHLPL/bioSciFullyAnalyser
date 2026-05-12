@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPCServer.Protos";
+
+package test;
+
+service Test{
+	rpc GetTest(TestRequest) returns (TestResponse);
+	rpc GetAllDropDowns(DropDownRequest) returns(DropDownListResponse);
+	rpc UpdateTest(TestResponse) returns (UpdateResponse);
+	rpc GetTestList(TestListRequest) returns (TestListResponse);
+}
+
+message DropDownRequest{
+}
+
+message DropDownListResponse{
+	map<string, DropDownValues> dropDowns = 1;
+}
+
+message DropDownValues{
+	repeated DropDownListItem Items = 1;
+}
+
+message DropDownListItem{
+	int32 value = 1;
+	string text = 2;
+}
+
+
+message TestRequest{
+	int32 TestID = 1;
+}
+
+message TestResponse{
+	bool requestSuccess = 1;
+	TestData test = 2;
+}
+
+message TestData{
+	int32 testID = 2; 
+	string testName = 3;
+	int32 testMethod = 4;
+	int32 testUnit = 5;
+	int32 reagents = 6; 
+	int32 decimals = 7;
+	int32 blankType = 8;
+	string CreatedBy = 9;
+	string CreatedAt = 10;
+	string ModifiedBy = 11;
+	string ModifiedAt = 12;
+	int32 primaryFilter = 13;
+	int32 secondaryFilter = 14;
+	int32 incubationTime = 15;
+	int32 readingTime = 16;
+	double corelationA = 17;
+	double corelationB = 18;
+	int32 r1Volume = 19;
+	int32 r2Volume = 20;
+	double sampleVolume = 21;
+	int32 autoDilutionRatio = 22;
+	int32 stirrerSpeedSample = 23;
+	int32 stirrerSpeedR2 = 24;
+	double lastReagentBlank = 25;
+	double reagentBlankHigh = 26;
+	double reagentBlankLow = 27;
+	string testCode = 28;
+	double linearity = 29;
+	double substrateDepletion = 30;
+	int32 direction = 31;
+}
+
+message UpdateResponse{
+	bool RequestSuccess = 1;
+	int32 ErrorType = 2;
+	string Message = 3;
+}
+
+message TestListRequest{
+	bool IncludeSpecialSolutions = 1;
+	bool IncludeVisibleOnly = 2;
+}
+
+message TestListResponse{
+	bool RequestSuccess = 1;
+	repeated TestCardData Tests = 2;
+}
+
+message TestCardData{
+	int32 TestID = 1;
+	string TestCode = 2;
+	string TestName = 3;
+	string Method = 4;
+	string BlankType = 5;
+	string PrimaryFilter = 6;
+	string SecondaryFilter = 7;
+}

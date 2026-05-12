@@ -8,7 +8,7 @@ namespace Data.Interfaces
     public interface ITblDictionaryValues
     {
         public string GetDictionaryValue(int idDictionaryKey, int idDictionaryValue);
-        public List<string> GetDictionaryValues(int idDictionaryKey);
+        public List<TblDictionaryValues> GetDictionaryValues(int idDictionaryKey);
         public List<TblDictionaryValues> GetEditableDictionaryValues(int idDictionaryKey);
 
         public string GetUserRole(int dictionaryValue);

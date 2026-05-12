@@ -1,6 +1,7 @@
 ﻿using Data.Contexts;
 using Data.Entities;
 using Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,16 +20,21 @@ namespace Data.Repositories
 
         public string GetDictionaryValue(int idDictionaryKey, int idDictionaryValue)
         {
-            // Implementation here
-            return string.Empty;
+            if (idDictionaryValue == 0)
+                return "--";
+            var dictionaryValueList = _context.TblDictionaryValues.Where(row =>
+                                                                    row.IdDictionaryKey == idDictionaryKey &&
+                                                                    row.DictionaryValue == idDictionaryValue &&
+                                                                    row.IsActive)
+                                                                .Select(row => row.ValueDescription).FirstOrDefault();
+            return dictionaryValueList;
         }
 
-        public List<string> GetDictionaryValues(int idDictionaryKey)
+        public List<TblDictionaryValues> GetDictionaryValues(int idDictionaryKey)
         {
             var dictionaryValueList = _context.TblDictionaryValues.Where(row =>
                                                                     row.IdDictionaryKey == idDictionaryKey &&
                                                                     row.IsActive)
-                                                                .Select(row => row.ValueDescription)
                                                                 .ToList();
 
             // Implementation here
