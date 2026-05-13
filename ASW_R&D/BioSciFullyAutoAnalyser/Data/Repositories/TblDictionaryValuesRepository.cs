@@ -35,6 +35,7 @@ namespace Data.Repositories
             var dictionaryValueList = _context.TblDictionaryValues.Where(row =>
                                                                     row.IdDictionaryKey == idDictionaryKey &&
                                                                     row.IsActive)
+                                                                .OrderBy(row => row.DictionaryValue)
                                                                 .ToList();
 
             // Implementation here

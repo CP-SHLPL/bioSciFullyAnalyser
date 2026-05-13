@@ -23,7 +23,7 @@ namespace Data.Repositories
 
         public List<TblTest> GetTestList(bool getSpecialSolutions)
         {
-            return _context.TblTest.Where(t => getSpecialSolutions || !t.IsSpecialSolution).ToList();
+            return _context.TblTest.ToList();
         }
         public List<TblTest> GetSpecialSolutions()
         {
@@ -42,7 +42,7 @@ namespace Data.Repositories
             if (testDetails == null) testDetails = new TblTestDetails();
             return testDetails;
         }
-        public TestRepositoryErrors UpdateTest(TblTest test, TblTestDetails testDetails)
+        public TestRepositoryResponses UpdateTest(TblTest test, TblTestDetails testDetails)
         {
             try
             {
@@ -57,9 +57,10 @@ namespace Data.Repositories
                     testDetails.IdTest = test.IdTest;
                     _context.TblTestDetails.Add(testDetails);
                     _context.SaveChanges();
+                    return TestRepositoryResponses.NewTestAdded;
                 }
                 else if (test.IdTest == 0 && existing)
-                    return TestRepositoryErrors.TestAlreadyExists;
+                    return TestRepositoryResponses.TestAlreadyExists;
                 else
                 {
                     _context.TblTest.Update(test);
@@ -91,10 +92,10 @@ namespace Data.Repositories
             } catch (Exception ex)
             {
                 // Log the exception or handle it as needed
-                return TestRepositoryErrors.DatabaseError;
+                return TestRepositoryResponses.DatabaseError;
             }
             
-                return TestRepositoryErrors.None;
+                return TestRepositoryResponses.None;
             
         }
     }

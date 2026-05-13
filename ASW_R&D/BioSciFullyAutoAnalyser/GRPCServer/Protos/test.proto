@@ -74,6 +74,7 @@ message UpdateResponse{
 	bool RequestSuccess = 1;
 	int32 ErrorType = 2;
 	string Message = 3;
+	TestCardData NewTest = 4;
 }
 
 message TestListRequest{
@@ -94,4 +95,6 @@ message TestCardData{
 	string BlankType = 5;
 	string PrimaryFilter = 6;
 	string SecondaryFilter = 7;
+	bool IsVisible = 8;
+	bool IsSpecialSolution = 9;
 }

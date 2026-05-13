@@ -10,32 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f7f802e-2ff5-4d09-a0ec-a2f01c6f80d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/core/shared_models/drop_downs.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/widgets/MyReactiveDropDown.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/widgets/MyReactiveTextField.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/widgets/my_tooltip.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/parameter/form/parameter_form.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/AddDatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/AddDatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Contexts/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Contexts/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblDictionaryValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblDictionaryValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/notifiers/test_card_notifier.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/shared_models/drop_downs_memory.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/widgets/test_list.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/test/views/edit_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Enums/CommonEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Enums/CommonEnums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblDictionaryValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblDictionaryValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblDictionaryValuesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblDictionaryValuesRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/DeviceController/DeviceCommunicator.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/DeviceController/DeviceCommunicator.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/GRPCServer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/GRPCServer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/login.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/login.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/GreeterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/GreeterService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/LoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblTestRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblTestRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/test.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/test.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/TestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/TestService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DesignDocuments/~$BioSciFullAnalyser_DatabaseSchema.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/widgets/custom_table.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/custom_table.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/data/home_page_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/data/home_page_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/shared_models/drop_downs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/notifiers/drop_down_notifier.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/views/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/views/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/parameter/data/reference_range.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/data/reference_range.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/parameter/data/test_service_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/data/test_service_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/parameter/form/parameter_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/form/parameter_form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/parameter/views/edit_parameter.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/parameter/views/reference_range_form_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/views/reference_range_form_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/test/test.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/test/test.pb.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/test/test.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/test/test.pbjson.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui_biosci_faa_proj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ui_biosci_faa_proj.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,29 +79,34 @@
     </panes>
   </component>
   <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "gRPC__Demo1",
-    "ignore.virus.scanning.warn.message": "true",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/bioSciFullyAnalyser/UI/ui_biosci_faa_proj",
-    "settings.editor.selected.configurable": "com.android.studio.ml.bot.mainConfigurable",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;parameter__form__fetching__all__widget&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;io.flutter.project.isFirstOpen&quot;: &quot;true&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/bioSciFullyAnalyser/UI/ui_biosci_faa_proj&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

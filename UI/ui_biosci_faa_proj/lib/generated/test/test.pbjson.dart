@@ -220,6 +220,14 @@ const UpdateResponse$json = {
     {'1': 'RequestSuccess', '3': 1, '4': 1, '5': 8, '10': 'RequestSuccess'},
     {'1': 'ErrorType', '3': 2, '4': 1, '5': 5, '10': 'ErrorType'},
     {'1': 'Message', '3': 3, '4': 1, '5': 9, '10': 'Message'},
+    {
+      '1': 'NewTest',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.test.TestCardData',
+      '10': 'NewTest'
+    },
   ],
 };
 
@@ -227,7 +235,7 @@ const UpdateResponse$json = {
 final $typed_data.Uint8List updateResponseDescriptor = $convert.base64Decode(
     'Cg5VcGRhdGVSZXNwb25zZRImCg5SZXF1ZXN0U3VjY2VzcxgBIAEoCFIOUmVxdWVzdFN1Y2Nlc3'
     'MSHAoJRXJyb3JUeXBlGAIgASgFUglFcnJvclR5cGUSGAoHTWVzc2FnZRgDIAEoCVIHTWVzc2Fn'
-    'ZQ==');
+    'ZRIsCgdOZXdUZXN0GAQgASgLMhIudGVzdC5UZXN0Q2FyZERhdGFSB05ld1Rlc3Q=');
 
 @$core.Deprecated('Use testListRequestDescriptor instead')
 const TestListRequest$json = {
@@ -288,6 +296,14 @@ const TestCardData$json = {
     {'1': 'BlankType', '3': 5, '4': 1, '5': 9, '10': 'BlankType'},
     {'1': 'PrimaryFilter', '3': 6, '4': 1, '5': 9, '10': 'PrimaryFilter'},
     {'1': 'SecondaryFilter', '3': 7, '4': 1, '5': 9, '10': 'SecondaryFilter'},
+    {'1': 'IsVisible', '3': 8, '4': 1, '5': 8, '10': 'IsVisible'},
+    {
+      '1': 'IsSpecialSolution',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'IsSpecialSolution'
+    },
   ],
 };
 
@@ -297,4 +313,5 @@ final $typed_data.Uint8List testCardDataDescriptor = $convert.base64Decode(
     'lSCFRlc3RDb2RlEhoKCFRlc3ROYW1lGAMgASgJUghUZXN0TmFtZRIWCgZNZXRob2QYBCABKAlS'
     'Bk1ldGhvZBIcCglCbGFua1R5cGUYBSABKAlSCUJsYW5rVHlwZRIkCg1QcmltYXJ5RmlsdGVyGA'
     'YgASgJUg1QcmltYXJ5RmlsdGVyEigKD1NlY29uZGFyeUZpbHRlchgHIAEoCVIPU2Vjb25kYXJ5'
-    'RmlsdGVy');
+    'RmlsdGVyEhwKCUlzVmlzaWJsZRgIIAEoCFIJSXNWaXNpYmxlEiwKEUlzU3BlY2lhbFNvbHV0aW'
+    '9uGAkgASgIUhFJc1NwZWNpYWxTb2x1dGlvbg==');

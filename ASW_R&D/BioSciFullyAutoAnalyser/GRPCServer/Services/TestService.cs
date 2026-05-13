@@ -3,6 +3,7 @@ using Grpc.Core;
 using GRPCServer.Protos;
 using Data.Enums;
 using Data.Entities;
+using Org.BouncyCastle.Utilities.IO;
 
 namespace GRPCServer.Services
 {
@@ -125,11 +126,13 @@ namespace GRPCServer.Services
             test.TestCode = response.TestCode;
             test.TestName = response.TestName;
             test.ConventionalUnitID = response.TestUnit;
+            test.DisplayString = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Unit, response.TestUnit);
             test.DecimalPlaces = response.Decimals;
             test.NoOfReagents = response.Reagents;
             test.BlankType = response.BlankType;
-            test.DirectionID = response.Direction;
+            test.BlankTypeString = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.BlankType, response.BlankType);
             test.MethodID = response.TestMethod;
+            test.MethodString = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Method, response.TestMethod);
 
             testDetails.StirrerSpeedSample = response.StirrerSpeedSample;
             testDetails.StirrerSpeedR2 = response.StirrerSpeedR2;
@@ -153,46 +156,58 @@ namespace GRPCServer.Services
 
             switch (saveSuccess)
             {
-                case TestRepositoryErrors.None:
+                case TestRepositoryResponses.None:
                     return Task.FromResult(new UpdateResponse
                     {
                         RequestSuccess = true,
                         ErrorType = 0,
                         Message="Test saved successfully"
                     });
-                    break;
-                case TestRepositoryErrors.TestNotFound:
+                case TestRepositoryResponses.NewTestAdded:
+                    return Task.FromResult(new UpdateResponse
+                    {
+                        RequestSuccess = true,
+                        ErrorType = 1,
+                        Message = "New test added successfully",
+                        NewTest = new TestCardData
+                        {
+                            TestID = test.IdTest,
+                            TestCode = test.TestCode,
+                            TestName = test.TestName,
+                            Method = test.MethodString,
+                            BlankType = test.BlankTypeString,
+                            PrimaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter, testDetails.PrimaryFilterID),
+                            SecondaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter, testDetails.SecondaryFilterID)
+                        }
+                    });
+                case TestRepositoryResponses.TestNotFound:
                     return Task.FromResult(new UpdateResponse
                     {
                         RequestSuccess = false,
                         ErrorType = 1,
                         Message = "Test not found"
                     });
-                    break;
-                case TestRepositoryErrors.TestDetailsNotFound:
+                case TestRepositoryResponses.TestDetailsNotFound:
                     return Task.FromResult(new UpdateResponse
                     {
                         RequestSuccess = false,
                         ErrorType = 2,
                         Message = "Test details not found"
                     });
-                    break;
-                case TestRepositoryErrors.DatabaseError:
+                case TestRepositoryResponses.DatabaseError:
                     return Task.FromResult(new UpdateResponse
                     {
                         RequestSuccess = false,
                         ErrorType = 3,
                         Message = "Database error"
                     });
-                    break;
-                case TestRepositoryErrors.TestAlreadyExists:
+                case TestRepositoryResponses.TestAlreadyExists:
                     return Task.FromResult(new UpdateResponse
                     {
                         RequestSuccess = false,
                         ErrorType = 4,
                         Message = "Test with the same name already exists"
                     });
-                    break;
                 default:
                     return Task.FromResult(new UpdateResponse
                     {
@@ -200,7 +215,6 @@ namespace GRPCServer.Services
                         ErrorType = 0,
                         Message = "Unknown error"
                     });
-
             }
         }
         public override Task<TestListResponse> GetTestList(TestListRequest request, ServerCallContext context)
@@ -218,10 +232,13 @@ namespace GRPCServer.Services
                         TestID = test.IdTest,
                         TestCode = test.TestCode,
                         TestName = test.TestName,
+                        IsSpecialSolution = test.IsSpecialSolution,
                         Method = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Method,test.MethodID),
                         BlankType = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.BlankType,test.BlankType),
                         PrimaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.PrimaryFilterID),
-                        SecondaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.SecondaryFilterID)
+                        SecondaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.SecondaryFilterID),
+                        IsVisible = test.IsVisible,
+                        
                     });
                 }
 

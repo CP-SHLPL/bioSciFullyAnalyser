@@ -20,7 +20,7 @@
         ServiceEngineer = 3
     }
 
-    public enum TestRepositoryErrors
+    public enum TestRepositoryResponses
     {
         None = 0,
         TestNotFound = 1,
@@ -30,5 +30,6 @@
         SampleVolumeIncorrect = 5,
         TotalVolumeIncorrect = 6,
         ReactionTimeIncorrect = 7,
+        NewTestAdded
     }
 }

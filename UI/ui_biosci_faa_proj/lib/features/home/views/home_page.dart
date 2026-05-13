@@ -2,24 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 import 'package:toastification/toastification.dart';
+import 'package:ui_biosci_faa_proj/core/notifiers/drop_down_notifier.dart';
+import 'package:ui_biosci_faa_proj/core/notifiers/test_card_notifier.dart';
 import 'package:ui_biosci_faa_proj/core/widgets/my_toast.dart';
+import 'package:ui_biosci_faa_proj/core/widgets/test_list.dart';
 import 'package:ui_biosci_faa_proj/features/home/data/home_page_provider.dart';
 import 'package:ui_biosci_faa_proj/features/home/views/_custom_edit_widget.dart';
-import 'package:ui_biosci_faa_proj/features/parameter/views/edit_parameter.dart';
+import 'package:ui_biosci_faa_proj/features/test/views/edit_test.dart';
 import 'package:ui_biosci_faa_proj/generated/login/login.pb.dart';
 import 'package:ui_biosci_faa_proj/generated/test/test.pb.dart';
 import '../../../core/widgets/custom_table.dart';
 import '../../user/providers/user_provider.dart';
 
-typedef EditPopupBuilder = Widget Function(
-    BuildContext context,
-    PlutoRow row,
-    PlutoGridStateManager stateManager,
+typedef EditPopupBuilder =
+    Widget Function(
+      BuildContext context,
+      PlutoRow row,
+      PlutoGridStateManager stateManager,
     );
 
 class HomePage extends ConsumerStatefulWidget {
-
-
   const HomePage({super.key});
 
   @override
@@ -27,64 +29,71 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
-
   final List<PlutoRow> _rows = [];
   late final List<PlutoColumn> columns;
   late PlutoGridStateManager stateManager;
   bool isLoading = false; // Add loading state
-  List<TestCardData> testCardData = [];
+  // List<TestCardData> testCardData = [];
+  List<int> selectedTests = [];
 
   void _refreshRows() async {
     setState(() {
       isLoading = true; // Set loading to true when fetching starts
     });
 
-    final testService = ref.read(testServiceProvider);
-    final testList = await testService.getTestList(TestListRequest()
-      ..includeSpecialSolutions = true
-      ..includeVisibleOnly = true);
-    testCardData.addAll(testList.tests);
+    // final testService = ref.read(testServiceProvider);
+    // final testList = await testService.getTestList(TestListRequest()
+    //   ..includeSpecialSolutions = true
+    //   ..includeVisibleOnly = true);
+    // testCardData.addAll(testList.tests);
 
     final homePageService = ref.read(homePageProvider);
-    homePageService.getDictionaryValues(DictionaryRequest()
-      ..dictionaryId = 1).then((response) {
-      print('Refreshed ${response.items.length} values from gRPC service');
-      List<PlutoRow> newRows = [];
-      for (var item in response.items) {
-        newRows.add(
-          PlutoRow(
-            cells: {
-              'id': PlutoCell(value: item.id),
-              'value': PlutoCell(value: item.value),
-              'age': PlutoCell(value: item.createdAt),
-              // Providing a valid string for date type
-              'actions': PlutoCell(value: item.id),
-              // Dummy value for the actions column
-              'delete': PlutoCell(value: item.id),
-              // Dummy value for the info column
-            },
-          ),
-        );
-      }
-      if (mounted) {
-        setState(() {
-          _rows.clear();
-          _rows.addAll(newRows);
-          isLoading = false; // Set loading to false when fetching is done
+    homePageService
+        .getDictionaryValues(DictionaryRequest()..dictionaryId = 1)
+        .then((response) {
+          print('Refreshed ${response.items.length} values from gRPC service');
+          List<PlutoRow> newRows = [];
+          for (var item in response.items) {
+            newRows.add(
+              PlutoRow(
+                cells: {
+                  'id': PlutoCell(value: item.id),
+                  'value': PlutoCell(value: item.value),
+                  'age': PlutoCell(value: item.createdAt),
+                  // Providing a valid string for date type
+                  'actions': PlutoCell(value: item.id),
+                  // Dummy value for the actions column
+                  'delete': PlutoCell(value: item.id),
+                  // Dummy value for the info column
+                },
+              ),
+            );
+          }
+          if (mounted) {
+            setState(() {
+              _rows.clear();
+              _rows.addAll(newRows);
+              isLoading = false; // Set loading to false when fetching is done
+            });
+          }
+        })
+        .catchError((error) {
+          print('Error refreshing dictionary values: $error');
+          setState(() {
+            isLoading = false; // Set loading to false on error
+          });
+          return null;
         });
-      }
-    }).catchError((error) {
-      print('Error refreshing dictionary values: $error');
-      setState(() {
-        isLoading = false; // Set loading to false on error
-      });
-      return null;
-    });
   }
 
   @override
   void initState() {
     super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(dropdownMemoryProvider.notifier).fetchOnce();
+      ref.read(allTestProvider.notifier).fetchOnce();
+    });
 
     columns = [
       PlutoColumn(
@@ -117,129 +126,116 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     final user = ref.watch(userProvider);
     final userName = user?.firstName ?? 'User';
     final userRole = user?.roleString ?? 'Role';
-
     return Scaffold(
       body: Column(
         children: [
           Text('Welcome $userName with his role $userRole'),
           SizedBox(height: 20),
           Expanded(
-            child: isLoading
-                ? Center(
-                child: CircularProgressIndicator()) // Show loading indicator when loading
-                : ReusableDataTable(
-              columns: columns,
-              rows: _rows,
-              showFilter: true,
-              onEditPressed: (dialogContext, row, statemanager) {
-                return Dialog(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        24), // Adjust radius as needed
-                  ),
-                  child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      final screenWidth = MediaQuery
-                          .of(context)
-                          .size
-                          .width;
-                      final dialogWidth = screenWidth *
-                          0.8; // 80% of screen width
-                      final maxWidth = 1300.0; // Optional: set a max width for very large screens
-                      return SizedBox(
-                        width: dialogWidth > maxWidth ? maxWidth : dialogWidth,
-                        child: EditParameter(1),
-                      );
-                    },
-                  ),
-                );
-              },
-              onDeletePressed: (dialogContext, row, stateManager) {
-                return CustomEditWidget(
-                  initialName: row.cells['value']?.value?.toString() ?? '',
-                  dictionaryValueId: row.cells['id']!.value as int,
+            child: Row(
+              children: [
+                TestListWidget(
+                  isVisible: true,
+                  rowSize: 2,
+                  aspectRatio: 5,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 30,
+                  onTap: (testID) {
+                    if(selectedTests.contains(testID)) {
+                      selectedTests.remove(testID);
+                    }
+                    else {
+                      selectedTests.add(testID);
+                    }
+                    setState(() {
+                      selectedTests = [...selectedTests];
+                    });
+                    print('Selected: ${testID}');
+                  },
+                  selectedTestIDs: selectedTests,
+                ),
+                Expanded(
+                  child: isLoading
+                      ? Center(
+                          child: CircularProgressIndicator(),
+                        ) // Show loading indicator when loading
+                      : ReusableDataTable(
+                          columns: columns,
+                          rows: _rows,
+                          showFilter: true,
+                          onEditPressed: (dialogContext, row, statemanager) {
+                            return Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                  24,
+                                ), // Adjust radius as needed
+                              ),
+                              child: LayoutBuilder(
+                                builder: (context, constraints) {
+                                  final screenWidth = MediaQuery.of(
+                                    context,
+                                  ).size.width;
+                                  final dialogWidth =
+                                      screenWidth * 0.8; // 80% of screen width
+                                  final maxWidth =
+                                      1300.0; // Optional: set a max width for very large screens
+                                  return SizedBox(
+                                    width: dialogWidth > maxWidth
+                                        ? maxWidth
+                                        : dialogWidth,
+                                    child: EditParameter(1),
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                          onDeletePressed: (dialogContext, row, stateManager) {
+                            return CustomEditWidget(
+                              initialName:
+                                  row.cells['value']?.value?.toString() ?? '',
+                              dictionaryValueId: row.cells['id']!.value as int,
 
-                  onCancel: () {
-                    Navigator.of(dialogContext).pop(); // Just close the dialog
-                  },
-                  onSaveSuccess: () =>
-                  {
-                    _refreshRows(),
-                    MyToast.show(
-                      context: context,
-                      title: 'Value updated successfully',
-                      // icon: Icon(Icons.check_circle, color: Colors.green),
-                      type: ToastificationType.success,
-                      customDuration: Duration(seconds: 1),
-                    ),
-                  },
-                );
-              },
+                              onCancel: () {
+                                Navigator.of(
+                                  dialogContext,
+                                ).pop(); // Just close the dialog
+                              },
+                              onSaveSuccess: () => {
+                                _refreshRows(),
+                                MyToast.show(
+                                  context: context,
+                                  title: 'Value updated successfully',
+                                  // icon: Icon(Icons.check_circle, color: Colors.green),
+                                  type: ToastificationType.success,
+                                  customDuration: Duration(seconds: 1),
+                                ),
+                              },
+                            );
+                          },
+                        ),
+                ),
+                TestListWidget(
+                  onlySpecialSolutions: true,
+                  rowSize: 2,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 30,
+                  aspectRatio: 5,
+                ),
+              ],
             ),
           ),
-          Expanded(
-            child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,      // This forces exactly 4 columns
-                  crossAxisSpacing: 40.0,  // The horizontal gap between columns
-                  mainAxisSpacing: 30.0,   // The vertical gap between rows
-                  childAspectRatio: 3.0,  // Ratio of width to height (1.0 makes them perfect squares)
-                ),
-                itemCount: testCardData.length,
-                itemBuilder: (context, index) {
-                  return generateCard(testCardData[index]);
-                }),
-          )
         ],
-      ),
-    );
-  }
 
-  Widget generateCard(TestCardData data) {
-    final testName = data.testName;
-    return ElevatedButton(
-      onPressed: () {
-        showDialog(
-            context: context,
-            builder: (BuildContext dialogContext) {
-              return Dialog(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                      24), // Adjust radius as needed
-                ),
-                child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      final screenWidth = MediaQuery
-                          .of(context)
-                          .size
-                          .width;
-                      final dialogWidth = screenWidth *
-                          0.8; // 80% of screen width
-                      final maxWidth = 1300.0;
-                      return SizedBox(
-                        width: dialogWidth > maxWidth
-                            ? maxWidth
-                            : dialogWidth,
-                        child: EditParameter(data.testID),
-                      );
-                    }),
-              );
-            }
-        );
-      },
-      child: Text(data.testName),
-      // child: ListTile(
-      //     leading: const Icon(Icons.shopping_cart),
-      //     title: Text(data.testCode),
-      //     subtitle: Text('This is $testName'),
-      //     trailing: const Icon(Icons.arrow_forward_ios),
-      //     onLongPress:
-      // ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => print(selectedTests),
+        child: Icon(Icons.save),
+      ),
     );
   }
 }

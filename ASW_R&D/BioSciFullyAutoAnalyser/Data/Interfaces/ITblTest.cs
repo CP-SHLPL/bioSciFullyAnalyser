@@ -12,7 +12,7 @@ namespace Data.Interfaces
     {
         TblTest GetTest(int TestID);
         TblTestDetails GetTestDetails(int TestID);
-        TestRepositoryErrors UpdateTest(TblTest test, TblTestDetails testDetails);
+        TestRepositoryResponses UpdateTest(TblTest test, TblTestDetails testDetails);
 
         List<TblTest> GetTestList(bool getSpecialSolutions);
         List<TblTest> GetSpecialSolutions();

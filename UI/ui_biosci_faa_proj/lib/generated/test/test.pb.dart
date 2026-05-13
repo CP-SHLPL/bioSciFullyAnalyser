@@ -765,11 +765,13 @@ class UpdateResponse extends $pb.GeneratedMessage {
     $core.bool? requestSuccess,
     $core.int? errorType,
     $core.String? message,
+    TestCardData? newTest,
   }) {
     final result = create();
     if (requestSuccess != null) result.requestSuccess = requestSuccess;
     if (errorType != null) result.errorType = errorType;
     if (message != null) result.message = message;
+    if (newTest != null) result.newTest = newTest;
     return result;
   }
 
@@ -790,6 +792,8 @@ class UpdateResponse extends $pb.GeneratedMessage {
         protoName: 'RequestSuccess')
     ..aI(2, _omitFieldNames ? '' : 'ErrorType', protoName: 'ErrorType')
     ..aOS(3, _omitFieldNames ? '' : 'Message', protoName: 'Message')
+    ..aOM<TestCardData>(4, _omitFieldNames ? '' : 'NewTest',
+        protoName: 'NewTest', subBuilder: TestCardData.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -837,6 +841,17 @@ class UpdateResponse extends $pb.GeneratedMessage {
   $core.bool hasMessage() => $_has(2);
   @$pb.TagNumber(3)
   void clearMessage() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  TestCardData get newTest => $_getN(3);
+  @$pb.TagNumber(4)
+  set newTest(TestCardData value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNewTest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNewTest() => $_clearField(4);
+  @$pb.TagNumber(4)
+  TestCardData ensureNewTest() => $_ensure(3);
 }
 
 class TestListRequest extends $pb.GeneratedMessage {
@@ -980,6 +995,8 @@ class TestCardData extends $pb.GeneratedMessage {
     $core.String? blankType,
     $core.String? primaryFilter,
     $core.String? secondaryFilter,
+    $core.bool? isVisible,
+    $core.bool? isSpecialSolution,
   }) {
     final result = create();
     if (testID != null) result.testID = testID;
@@ -989,6 +1006,8 @@ class TestCardData extends $pb.GeneratedMessage {
     if (blankType != null) result.blankType = blankType;
     if (primaryFilter != null) result.primaryFilter = primaryFilter;
     if (secondaryFilter != null) result.secondaryFilter = secondaryFilter;
+    if (isVisible != null) result.isVisible = isVisible;
+    if (isSpecialSolution != null) result.isSpecialSolution = isSpecialSolution;
     return result;
   }
 
@@ -1013,6 +1032,9 @@ class TestCardData extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'PrimaryFilter', protoName: 'PrimaryFilter')
     ..aOS(7, _omitFieldNames ? '' : 'SecondaryFilter',
         protoName: 'SecondaryFilter')
+    ..aOB(8, _omitFieldNames ? '' : 'IsVisible', protoName: 'IsVisible')
+    ..aOB(9, _omitFieldNames ? '' : 'IsSpecialSolution',
+        protoName: 'IsSpecialSolution')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1096,6 +1118,24 @@ class TestCardData extends $pb.GeneratedMessage {
   $core.bool hasSecondaryFilter() => $_has(6);
   @$pb.TagNumber(7)
   void clearSecondaryFilter() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isVisible => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isVisible($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIsVisible() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsVisible() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get isSpecialSolution => $_getBF(8);
+  @$pb.TagNumber(9)
+  set isSpecialSolution($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIsSpecialSolution() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIsSpecialSolution() => $_clearField(9);
 }
 
 const $core.bool _omitFieldNames =

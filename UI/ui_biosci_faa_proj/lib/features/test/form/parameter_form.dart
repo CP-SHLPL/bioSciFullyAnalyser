@@ -146,7 +146,7 @@ class ParameterForm {
           control.markAsEnabled();
         } else {
           control.markAsDisabled();
-          // control.value = 0;
+          control.value = 0;
         }
       }
     });
