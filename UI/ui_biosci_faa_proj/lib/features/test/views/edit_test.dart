@@ -264,7 +264,7 @@ class _EditParameterState extends ConsumerState<EditParameter> {
             icon: Icon(Icons.close),
             onPressed: () => Navigator.of(context).pop(),
             color: Colors.red,
-          )
+          ),
         ],
       ),
       body: ReactiveForm(

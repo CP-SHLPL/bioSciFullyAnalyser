@@ -3,9 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ui_biosci_faa_proj/features/home/views/home_page.dart';
 
 void main() {
-  runApp(
-    const ProviderScope(child: MyApp()),
-  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,18 +15,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen, brightness: Brightness.light), // Generates a color scheme based on the first primary color
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.lightGreen,
+          brightness: Brightness.light,
+        ),
+        // Generates a color scheme based on the first primary color
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         // Generates a dark color palette based on the SAME blue seed
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.lightGreen, 
-          brightness: Brightness.dark, 
+          seedColor: Colors.lightGreen,
+          brightness: Brightness.dark,
         ),
-        // You only need to define button themes here if you want 
-        // them to look fundamentally different in dark mode. 
+        // You only need to define button themes here if you want
+        // them to look fundamentally different in dark mode.
         // Otherwise, they automatically adapt to the dark colors!
       ),
       themeMode: ThemeMode.light,
@@ -105,9 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Expanded(child: HomePage()),
-          ],
+          children: const [Expanded(child: HomePage())],
         ),
       ),
       // floatingActionButton: FloatingActionButton(

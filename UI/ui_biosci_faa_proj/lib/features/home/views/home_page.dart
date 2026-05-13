@@ -146,10 +146,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                   mainAxisSpacing: 15,
                   crossAxisSpacing: 30,
                   onTap: (testID) {
-                    if(selectedTests.contains(testID)) {
+                    if (selectedTests.contains(testID)) {
                       selectedTests.remove(testID);
-                    }
-                    else {
+                    } else {
                       selectedTests.add(testID);
                     }
                     setState(() {
@@ -230,7 +229,6 @@ class _HomePageState extends ConsumerState<HomePage> {
             ),
           ),
         ],
-
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => print(selectedTests),

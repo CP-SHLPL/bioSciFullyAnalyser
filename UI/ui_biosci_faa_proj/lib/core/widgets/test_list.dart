@@ -32,7 +32,6 @@ class TestListWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     List<TestCardData> testCardData = [];
     if (isVisible) {
       testCardData.addAll(ref.watch(visibleTestProvider));
@@ -49,10 +48,14 @@ class TestListWidget extends ConsumerWidget {
         padding: const EdgeInsets.all(30.0),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: rowSize, // This forces exactly 4 columns
-            crossAxisSpacing: crossAxisSpacing, // The horizontal gap between columns
-            mainAxisSpacing: mainAxisSpacing, // The vertical gap between rows
-            childAspectRatio: aspectRatio, // Ratio of width to height (1.0 makes them perfect squares)
+            crossAxisCount: rowSize,
+            // This forces exactly 4 columns
+            crossAxisSpacing: crossAxisSpacing,
+            // The horizontal gap between columns
+            mainAxisSpacing: mainAxisSpacing,
+            // The vertical gap between rows
+            childAspectRatio:
+                aspectRatio, // Ratio of width to height (1.0 makes them perfect squares)
           ),
           itemCount: testCardData.length,
           itemBuilder: (context, index) {
@@ -88,7 +91,8 @@ class TestListWidget extends ConsumerWidget {
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     final screenWidth = MediaQuery.of(context).size.width;
-                    final dialogWidth = screenWidth * 0.8; // 80% of screen width
+                    final dialogWidth =
+                        screenWidth * 0.8; // 80% of screen width
                     final maxWidth = 1300.0;
                     return SizedBox(
                       width: dialogWidth > maxWidth ? maxWidth : dialogWidth,
