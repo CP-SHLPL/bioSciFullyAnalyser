@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.lightGreen,
+          seedColor: Colors.amber,
           brightness: Brightness.light,
         ),
         // Generates a color scheme based on the first primary color

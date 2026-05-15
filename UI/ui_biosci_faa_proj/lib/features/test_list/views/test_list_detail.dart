@@ -4,7 +4,7 @@ import 'package:ui_biosci_faa_proj/core/notifiers/test_card_notifier.dart';
 import 'package:ui_biosci_faa_proj/features/test/views/edit_test.dart';
 import 'package:ui_biosci_faa_proj/generated/test/test.pb.dart';
 
-class TestListWidget extends ConsumerWidget {
+class TestListDetailWidget extends ConsumerWidget {
   final bool isVisible;
   final bool withSpecialSolutions;
   final bool onlySpecialSolutions;
@@ -15,8 +15,12 @@ class TestListWidget extends ConsumerWidget {
   final double aspectRatio;
   final void Function(int)? onTap;
   final List<int>? selectedTestIDs;
+  final bool shrinkWrap;
+  final ScrollPhysics? physics;
+  final bool isMasterList;
 
-  const TestListWidget({
+
+  const TestListDetailWidget({
     super.key,
     required this.rowSize,
     this.crossAxisSpacing = 20,
@@ -28,12 +32,18 @@ class TestListWidget extends ConsumerWidget {
     this.allTests = false,
     this.onTap,
     this.selectedTestIDs = const [],
+    this.shrinkWrap = false,
+    this.physics,
+    this.isMasterList = false
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     List<TestCardData> testCardData = [];
-    if (isVisible) {
+    if(isMasterList){
+      testCardData.addAll(ref.watch(visibleTestProvider).where((test) => test.testID < 5));
+    }
+    else if (isVisible) {
       testCardData.addAll(ref.watch(visibleTestProvider));
     } else if (withSpecialSolutions) {
       testCardData.addAll(ref.watch(withSpecialSolutionTestProvider));
@@ -43,25 +53,21 @@ class TestListWidget extends ConsumerWidget {
       testCardData.addAll(ref.watch(allTestProvider));
     }
 
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: rowSize,
-            // This forces exactly 4 columns
-            crossAxisSpacing: crossAxisSpacing,
-            // The horizontal gap between columns
-            mainAxisSpacing: mainAxisSpacing,
-            // The vertical gap between rows
-            childAspectRatio:
-                aspectRatio, // Ratio of width to height (1.0 makes them perfect squares)
-          ),
-          itemCount: testCardData.length,
-          itemBuilder: (context, index) {
-            return generateCard(testCardData[index], context);
-          },
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: GridView.builder(
+        shrinkWrap: shrinkWrap,
+        physics: physics,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: rowSize,
+          crossAxisSpacing: crossAxisSpacing,
+          mainAxisSpacing: mainAxisSpacing,
+          childAspectRatio: aspectRatio,
         ),
+        itemCount: testCardData.length,
+        itemBuilder: (context, index) {
+          return generateCard(testCardData[index], context);
+        },
       ),
     );
   }

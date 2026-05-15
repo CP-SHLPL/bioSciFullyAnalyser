@@ -4,11 +4,13 @@ import 'package:pluto_grid/pluto_grid.dart';
 import 'package:toastification/toastification.dart';
 import 'package:ui_biosci_faa_proj/core/notifiers/drop_down_notifier.dart';
 import 'package:ui_biosci_faa_proj/core/notifiers/test_card_notifier.dart';
+import 'package:ui_biosci_faa_proj/features/main_page/views/master_detail_layout.dart';
 import 'package:ui_biosci_faa_proj/core/widgets/my_toast.dart';
-import 'package:ui_biosci_faa_proj/core/widgets/test_list.dart';
+import 'package:ui_biosci_faa_proj/features/test_list/views/test_list_detail.dart';
 import 'package:ui_biosci_faa_proj/features/home/data/home_page_provider.dart';
 import 'package:ui_biosci_faa_proj/features/home/views/_custom_edit_widget.dart';
 import 'package:ui_biosci_faa_proj/features/test/views/edit_test.dart';
+import 'package:ui_biosci_faa_proj/features/test_list/views/test_list_master.dart';
 import 'package:ui_biosci_faa_proj/generated/login/login.pb.dart';
 import 'package:ui_biosci_faa_proj/generated/test/test.pb.dart';
 import '../../../core/widgets/custom_table.dart';
@@ -126,113 +128,129 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.dispose();
   }
 
+  List<MasterDetailItem> getMasterDetailItems(BuildContext context){
+    return [
+      MasterDetailItem(
+        collapsed: const Text('Test Management'),
+        expanded: TestListDetailWidget(
+          isMasterList: true,
+          rowSize: 2,
+          aspectRatio: 5,
+          mainAxisSpacing: 15,
+          crossAxisSpacing: 30,
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          // onTap: (testID) {
+          //   if (selectedTests.contains(testID)) {
+          //     selectedTests.remove(testID);
+          //   } else {
+          //     selectedTests.add(testID);
+          //   }
+          //   setState(() {
+          //     selectedTests = [...selectedTests];
+          //   });
+          //   print('Selected: $testID');
+          // },
+          selectedTestIDs: selectedTests,
+        ),
+        detail: Row(
+          children: [
+            Expanded(
+              child: TestListDetailWidget(
+                isVisible: true,
+                rowSize: 2,
+                aspectRatio: 5,
+                mainAxisSpacing: 15,
+                crossAxisSpacing: 30,
+                // onTap: (testID) {
+                //   if (selectedTests.contains(testID)) {
+                //     selectedTests.remove(testID);
+                //   } else {
+                //     selectedTests.add(testID);
+                //   }
+                //   setState(() {
+                //     selectedTests = [...selectedTests];
+                //   });
+                //   print('Selected: $testID');
+                // },
+                selectedTestIDs: selectedTests,
+              ),
+            ),
+          ],
+        ),
+      ),
+      MasterDetailItem(
+        collapsed: const Text('Data Dictionary'),
+        detail: isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : ReusableDataTable(
+          columns: columns,
+          rows: _rows,
+          showFilter: true,
+          onEditPressed: (dialogContext, row, statemanager) {
+            return Dialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final screenWidth = MediaQuery.of(context).size.width;
+                  final dialogWidth = screenWidth * 0.8;
+                  const maxWidth = 1300.0;
+                  return SizedBox(
+                    width: dialogWidth > maxWidth ? maxWidth : dialogWidth,
+                    child: const EditParameter(1),
+                  );
+                },
+              ),
+            );
+          },
+          onDeletePressed: (dialogContext, row, stateManager) {
+            return CustomEditWidget(
+              initialName: row.cells['value']?.value?.toString() ?? '',
+              dictionaryValueId: row.cells['id']!.value as int,
+              onCancel: () => Navigator.of(dialogContext).pop(),
+              onSaveSuccess: () {
+                _refreshRows();
+                MyToast.show(
+                  context: context,
+                  title: 'Value updated successfully',
+                  type: ToastificationType.success,
+                  customDuration: const Duration(seconds: 1),
+                );
+              },
+            );
+          },
+        ),
+      ),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final user = ref.watch(userProvider);
     final userName = user?.firstName ?? 'User';
     final userRole = user?.roleString ?? 'Role';
+
+    // Sample items for Master-Detail Layout
+    final masterDetailItems = getMasterDetailItems(context);
+
     return Scaffold(
       body: Column(
         children: [
-          Text('Welcome $userName with his role $userRole'),
-          SizedBox(height: 20),
           Expanded(
-            child: Row(
-              children: [
-                TestListWidget(
-                  isVisible: true,
-                  rowSize: 2,
-                  aspectRatio: 5,
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 30,
-                  onTap: (testID) {
-                    if (selectedTests.contains(testID)) {
-                      selectedTests.remove(testID);
-                    } else {
-                      selectedTests.add(testID);
-                    }
-                    setState(() {
-                      selectedTests = [...selectedTests];
-                    });
-                    print('Selected: ${testID}');
-                  },
-                  selectedTestIDs: selectedTests,
-                ),
-                Expanded(
-                  child: isLoading
-                      ? Center(
-                          child: CircularProgressIndicator(),
-                        ) // Show loading indicator when loading
-                      : ReusableDataTable(
-                          columns: columns,
-                          rows: _rows,
-                          showFilter: true,
-                          onEditPressed: (dialogContext, row, statemanager) {
-                            return Dialog(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  24,
-                                ), // Adjust radius as needed
-                              ),
-                              child: LayoutBuilder(
-                                builder: (context, constraints) {
-                                  final screenWidth = MediaQuery.of(
-                                    context,
-                                  ).size.width;
-                                  final dialogWidth =
-                                      screenWidth * 0.8; // 80% of screen width
-                                  final maxWidth =
-                                      1300.0; // Optional: set a max width for very large screens
-                                  return SizedBox(
-                                    width: dialogWidth > maxWidth
-                                        ? maxWidth
-                                        : dialogWidth,
-                                    child: EditParameter(1),
-                                  );
-                                },
-                              ),
-                            );
-                          },
-                          onDeletePressed: (dialogContext, row, stateManager) {
-                            return CustomEditWidget(
-                              initialName:
-                                  row.cells['value']?.value?.toString() ?? '',
-                              dictionaryValueId: row.cells['id']!.value as int,
-
-                              onCancel: () {
-                                Navigator.of(
-                                  dialogContext,
-                                ).pop(); // Just close the dialog
-                              },
-                              onSaveSuccess: () => {
-                                _refreshRows(),
-                                MyToast.show(
-                                  context: context,
-                                  title: 'Value updated successfully',
-                                  // icon: Icon(Icons.check_circle, color: Colors.green),
-                                  type: ToastificationType.success,
-                                  customDuration: Duration(seconds: 1),
-                                ),
-                              },
-                            );
-                          },
-                        ),
-                ),
-                TestListWidget(
-                  onlySpecialSolutions: true,
-                  rowSize: 2,
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 30,
-                  aspectRatio: 5,
-                ),
-              ],
+            child: MasterDetailLayout(
+              items: masterDetailItems,
+              emptyDetail: const Center(
+                child: Text('Please select an item from the Master list on the left.'),
+              ),
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => print(selectedTests),
-        child: Icon(Icons.save),
+        child: const Icon(Icons.save),
       ),
     );
   }

@@ -9,30 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f7f802e-2ff5-4d09-a0ec-a2f01c6f80d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/core/notifiers/test_card_notifier.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/shared_models/drop_downs_memory.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/widgets/test_list.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/test/views/edit_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Entities/TblTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Enums/CommonEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Enums/CommonEnums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Interfaces/ITblTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblDictionaryValuesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblDictionaryValuesRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblTestRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/Data/Repositories/TblTestRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/test.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Protos/test.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/TestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/Services/TestService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DesignDocuments/~$BioSciFullAnalyser_DatabaseSchema.xlsx" beforeDir="false" />
+    <list default="true" id="9f7f802e-2ff5-4d09-a0ec-a2f01c6f80d4" name="Changes" comment="Formatting Changes">
+      <change afterPath="$PROJECT_DIR$/lib/features/main_page/views/master_detail_layout.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/test_list/views/test_list_master.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/GRPCServer.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../ASW_R&amp;D/BioSciFullyAutoAnalyser/GRPCServer/GRPCServer.csproj.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/shared_models/drop_downs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/notifiers/drop_down_notifier.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/widgets/test_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test_list/views/test_list_detail.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/views/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/views/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/parameter/data/reference_range.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/data/reference_range.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/parameter/data/test_service_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/data/test_service_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/parameter/form/parameter_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/form/parameter_form.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/parameter/views/edit_parameter.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/parameter/views/reference_range_form_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/test/views/reference_range_form_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated/test/test.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/test/test.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated/test/test.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/test/test.pbjson.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +49,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -80,7 +66,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
-    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -107,6 +92,14 @@
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bioSciFullyAnalyser\UI\ui_biosci_faa_proj\lib\features\test_list\views" />
+      <recent name="D:\bioSciFullyAnalyser\UI\ui_biosci_faa_proj\lib\features\user\providers" />
+      <recent name="D:\bioSciFullyAnalyser\UI\ui_biosci_faa_proj\lib\features\main_page\views" />
+      <recent name="D:\bioSciFullyAnalyser\UI\ui_biosci_faa_proj\lib\features\" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -116,6 +109,15 @@
       <option name="presentableId" value="Default" />
       <updated>1777955882087</updated>
     </task>
+    <task id="LOCAL-00001" summary="Formatting Changes">
+      <option name="closed" value="true" />
+      <created>1778668906645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778668906646</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -134,5 +136,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Formatting Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting Changes" />
   </component>
 </project>
