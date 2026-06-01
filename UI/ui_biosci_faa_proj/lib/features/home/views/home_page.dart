@@ -131,7 +131,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   List<MasterDetailItem> getMasterDetailItems(BuildContext context){
     return [
       MasterDetailItem(
-        collapsed: const Text('Test Management'),
+        collapsed: const Text('Parameters'),
         expanded: TestListDetailWidget(
           isMasterList: true,
           rowSize: 2,
@@ -242,7 +242,7 @@ class _HomePageState extends ConsumerState<HomePage> {
             child: MasterDetailLayout(
               items: masterDetailItems,
               emptyDetail: const Center(
-                child: Text('Please select an item from the Master list on the left.'),
+                child: Icon(Icons.build_circle, size: 50),
               ),
             ),
           ),

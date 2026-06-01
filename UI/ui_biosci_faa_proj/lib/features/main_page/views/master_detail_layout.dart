@@ -38,16 +38,23 @@ class _MasterDetailLayoutState extends State<MasterDetailLayout> {
 
   void _toggleExpanded(int index) {
     setState(() {
-      if (_expandedIndices == index)
+      if (_expandedIndices == index) {
         _expandedIndices = -1;
-      else
+      }
+      else {
         _expandedIndices = index;
+      }
     });
   }
 
   void _selectItem(int index) {
     setState(() {
-      _selectedIndex = index;
+      if(_selectedIndex  == index) {
+        _selectedIndex = null;
+      }
+      else {
+        _selectedIndex = index;
+      }
     });
   }
 
@@ -119,7 +126,7 @@ class _MasterDetailLayoutState extends State<MasterDetailLayout> {
                                 horizontal: 8,
                                 vertical: 4,
                               ),
-                              elevation: isSelected ? 2 : 0,
+                              elevation: isSelected ? 8 : 2,
                               color: isSelected
                                   ? Theme.of(context)
                                         .colorScheme
