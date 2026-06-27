@@ -77,8 +77,8 @@ class TestListDetailWidget extends ConsumerWidget {
     return ElevatedButton(
       style: isSelected
           ? ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-              foregroundColor: Theme.of(context).colorScheme.onPrimary,
+              backgroundColor: Theme.of(context).colorScheme.tertiary,
+              foregroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
             )
           : null,
       onPressed: () {

@@ -30,10 +30,10 @@ namespace Data.Repositories
             return _context.TblTest.Where(t => t.IsSpecialSolution).ToList();
         }
 
-        public TblTest GetTest(int TestID)
+        public TblTest? GetTest(int TestID)
         {
             var test = _context.TblTest.Find(TestID);
-            if (test == null) test = new TblTest();
+            //if (test == null) test = new TblTest();
             return test;
         }
         public TblTestDetails GetTestDetails(int TestID)

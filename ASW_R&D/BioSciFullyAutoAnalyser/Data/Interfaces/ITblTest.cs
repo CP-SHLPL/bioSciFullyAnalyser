@@ -10,7 +10,7 @@ namespace Data.Interfaces
 {
     public interface ITblTest
     {
-        TblTest GetTest(int TestID);
+        TblTest? GetTest(int TestID);
         TblTestDetails GetTestDetails(int TestID);
         TestRepositoryResponses UpdateTest(TblTest test, TblTestDetails testDetails);
 

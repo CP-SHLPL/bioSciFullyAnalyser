@@ -8,8 +8,8 @@ using Org.BouncyCastle.Utilities.IO;
 namespace GRPCServer.Services
 {
     public class TestService(ILogger<TestService> logger,
-                                    ITblTest _tblTestRepository,
-                                    ITblDictionaryValues _tblDictionaryValues) : Test.TestBase
+                                    ITblTest tblTestRepository,
+                                    ITblDictionaryValues tblDictionaryValues) : Test.TestBase
     {
         //private readonly ITblUserRepository _tblUserRepository;
         //private readonly ITblDictionaryValues _TblDictionaryValueRepository;
@@ -25,10 +25,10 @@ namespace GRPCServer.Services
             logger.LogInformation("The message is received from {Name}", request.TestID);
 
             //var user = _tblUserRepository.GetByUsernameAsync(request.Name).Result;
-            var test = _tblTestRepository.GetTest(request.TestID);
-            if (test.IdTest != 0)
+            var test = tblTestRepository.GetTest(request.TestID);
+            if (test != null)
             {
-                var testDetails = _tblTestRepository.GetTestDetails(test.IdTest);
+                var testDetails = tblTestRepository.GetTestDetails(test.IdTest);
 
                 var testData = new TestData
                 {
@@ -96,7 +96,7 @@ namespace GRPCServer.Services
             var response = new DropDownListResponse();
             foreach (var dropDownKey in listOfDropDowns)
             {
-                var values = _tblDictionaryValues.GetDictionaryValues((int)dropDownKey).Select(value =>
+                var values = tblDictionaryValues.GetDictionaryValues((int)dropDownKey).Select(value =>
                 {
                     return new DropDownListItem
                     {
@@ -126,13 +126,13 @@ namespace GRPCServer.Services
             test.TestCode = response.TestCode;
             test.TestName = response.TestName;
             test.ConventionalUnitID = response.TestUnit;
-            test.DisplayString = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Unit, response.TestUnit);
+            test.DisplayString = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Unit, response.TestUnit);
             test.DecimalPlaces = response.Decimals;
             test.NoOfReagents = response.Reagents;
             test.BlankType = response.BlankType;
-            test.BlankTypeString = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.BlankType, response.BlankType);
+            test.BlankTypeString = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.BlankType, response.BlankType);
             test.MethodID = response.TestMethod;
-            test.MethodString = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Method, response.TestMethod);
+            test.MethodString = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Method, response.TestMethod);
 
             testDetails.StirrerSpeedSample = response.StirrerSpeedSample;
             testDetails.StirrerSpeedR2 = response.StirrerSpeedR2;
@@ -152,7 +152,7 @@ namespace GRPCServer.Services
             testDetails.ModifiedAt = DateTime.Now;
             testDetails.ModifiedBy = 1;
 
-            var saveSuccess = _tblTestRepository.UpdateTest(test, testDetails);
+            var saveSuccess = tblTestRepository.UpdateTest(test, testDetails);
 
             switch (saveSuccess)
             {
@@ -176,8 +176,8 @@ namespace GRPCServer.Services
                             TestName = test.TestName,
                             Method = test.MethodString,
                             BlankType = test.BlankTypeString,
-                            PrimaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter, testDetails.PrimaryFilterID),
-                            SecondaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter, testDetails.SecondaryFilterID)
+                            PrimaryFilter = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter, testDetails.PrimaryFilterID),
+                            SecondaryFilter = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter, testDetails.SecondaryFilterID)
                         }
                     });
                 case TestRepositoryResponses.TestNotFound:
@@ -222,21 +222,21 @@ namespace GRPCServer.Services
             try{
                 var testCardData = new List<TestCardData>();
 
-                var  testList = _tblTestRepository.GetTestList(request.IncludeSpecialSolutions);
+                var  testList = tblTestRepository.GetTestList(request.IncludeSpecialSolutions);
 
                 foreach(var test in testList)
                 {
-                    var testDetail = _tblTestRepository.GetTestDetails(test.IdTest);
+                    var testDetail = tblTestRepository.GetTestDetails(test.IdTest);
                     testCardData.Add(new TestCardData
                     {
                         TestID = test.IdTest,
                         TestCode = test.TestCode,
                         TestName = test.TestName,
                         IsSpecialSolution = test.IsSpecialSolution,
-                        Method = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Method,test.MethodID),
-                        BlankType = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.BlankType,test.BlankType),
-                        PrimaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.PrimaryFilterID),
-                        SecondaryFilter = _tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.SecondaryFilterID),
+                        Method = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Method,test.MethodID),
+                        BlankType = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.BlankType,test.BlankType),
+                        PrimaryFilter = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.PrimaryFilterID),
+                        SecondaryFilter = tblDictionaryValues.GetDictionaryValue((int)EnumDicitonaryKeys.Filter,testDetail.SecondaryFilterID),
                         IsVisible = test.IsVisible,
                         
                     });
