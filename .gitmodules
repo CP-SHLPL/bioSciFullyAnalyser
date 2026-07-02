@@ -1,0 +1,3 @@
+[submodule "ASW_SourceCode/BioSciAnalyser_SW"]
+	path = ASW_SourceCode/BioSciAnalyser_SW
+	url = git@github.com:CP-SHLPL/BioSciAnalyser_SW.git
